@@ -11,15 +11,15 @@ hsp = move * walksp;
 
 vsp = vsp + grv;
 
-if (place_meeting(x, y + 1, Obj_wall)) && (key_jump)
+if (place_meeting(x, y + 1, Obj_wall1)) && (key_jump)
 {
 	vsp = -7;
 }
 
 //horizontal collision
-if (place_meeting(x + hsp, y , Obj_wall))
+if (place_meeting(x + hsp, y , Obj_wall1,))
 {
-	while (!place_meeting(x + sign(hsp),y , Obj_wall))
+	while (!place_meeting(x + sign(hsp),y , Obj_wall1,))
 	{
 		x = x + sign (hsp);
 	}
@@ -28,9 +28,9 @@ if (place_meeting(x + hsp, y , Obj_wall))
 x = x + hsp;
 
 //vertical position
-if (place_meeting(x , y + vsp, Obj_wall))
+if (place_meeting(x , y + vsp, Obj_wall1))
 {
-	while (!place_meeting(x ,y + sign(vsp), Obj_wall))
+	while (!place_meeting(x ,y + sign(vsp), Obj_wall1))
 	{
 		y = y + sign (vsp);
 	}
@@ -39,7 +39,7 @@ if (place_meeting(x , y + vsp, Obj_wall))
 y = y + vsp;
 
 //animation
-if (!place_meeting (x, y + 1,Obj_wall))
+if (!place_meeting (x, y + 1,Obj_wall1))
 {
 	sprite_index = Spr_slime_jump;
 	image_speed = 0; 
@@ -58,3 +58,8 @@ else
 	}
 }
 if (hsp !=0) image_xscale = sign(hsp);
+
+//wall 2 collision
+
+
+
